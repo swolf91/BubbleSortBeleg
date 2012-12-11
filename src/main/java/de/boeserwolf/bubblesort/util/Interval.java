@@ -22,4 +22,10 @@ public class Interval <V extends Number>
             throw new IllegalIntervalException("It's not a valid interval");
         }
     }
+    
+    @Override
+    public String toString()
+    {
+        return "[" + this.leftLimit + ", " + this.rightLimit + "]";
+    }
 }
