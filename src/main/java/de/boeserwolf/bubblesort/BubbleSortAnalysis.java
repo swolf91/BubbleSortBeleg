@@ -4,16 +4,15 @@ import de.boeserwolf.bubblesort.util.ComparableList;
 import de.boeserwolf.bubblesort.util.Direction;
 import de.boeserwolf.bubblesort.util.Interval;
 import de.boeserwolf.bubblesort.util.NumberUtil;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
-public class BubbleSortAnalysis<C extends Comparable> implements Iterable<ComparableList<C>>
+public class BubbleSortAnalysis<C extends Comparable>
 {
-    List<ComparableList<C>> lists;
+    int amountLists;
+    int amountElementsPerList;
     
     Map<Integer, Integer> absoluteFrequency;
     
@@ -23,12 +22,15 @@ public class BubbleSortAnalysis<C extends Comparable> implements Iterable<Compar
         {
             throw new UnsupportedOperationException("Only Integer and Double values are permitted.");
         }
-        this.lists = new ArrayList<>(amountLists);
         this.absoluteFrequency = new HashMap<>();
+        this.amountLists = amountLists;
+        this.amountElementsPerList = amountElements;
+        
+        ComparableList<C> list = new ComparableList<>();
         
         for(int i = 0; i < amountLists; i++)
         {
-            ComparableList<C> list = new ComparableList<>();
+            list.clear();
             
             for(int j = 0; j < amountElements; j++)
             {
@@ -41,8 +43,6 @@ public class BubbleSortAnalysis<C extends Comparable> implements Iterable<Compar
                     list.add((C)Double.valueOf( NumberUtil.getRandomDouble(interval) ));
                 }
             }
-            
-            this.lists.add(list);
             
             list.sort(Direction.ASC);
             this.addAbsFrequency(list.getReplacements());
@@ -64,7 +64,7 @@ public class BubbleSortAnalysis<C extends Comparable> implements Iterable<Compar
         return this.absoluteFrequency.get(key) / (double)this.getNumberOfLists();
     }
     
-    public double getArithmeticAverage()
+    public double getAverage()
     {
         double avg = 0;
         
@@ -79,7 +79,7 @@ public class BubbleSortAnalysis<C extends Comparable> implements Iterable<Compar
     public double getEmpiricalSpread()
     {
         double spread = 0;
-        double avg = this.getArithmeticAverage();
+        double avg = this.getAverage();
         
         for(Integer value : this.getReplacementKeys())
         {
@@ -91,26 +91,19 @@ public class BubbleSortAnalysis<C extends Comparable> implements Iterable<Compar
     
     public Interval getConfidenzInterval95()
     {
-        double avg = this.getArithmeticAverage();
+        double avg = this.getAverage();
         double spread = this.getEmpiricalSpread();
         
         return new Interval(avg - 1.96 * spread, avg + 1.96 * spread);
     }
     
-    public ComparableList<C> getList(int index)
-    {
-        return this.lists.get(index);
-    }
-    
     public int getNumberOfLists()
     {
-        return this.lists.size();
+        return this.amountLists;
     }
-
-    @Override
-    public Iterator iterator()
+    public int getNumberOfElementsPerList()
     {
-        return this.lists.iterator();
+        return this.amountElementsPerList;
     }
 
     private void addAbsFrequency(int replacements) 
