@@ -7,15 +7,19 @@ public class Main
 
     public static void main(String[] args)
     {
-        BubbleSortAnalysis<Integer> analysis = new BubbleSortAnalysis<>(Integer.class, 50, 10, new Interval(1, 1000));
-
-//        for(Integer value : analysis.getReplacementKeys())
-//        {
-//            System.out.println(value + ": " + analysis.getAbsoluteFrequency(value));
-//        }
-        System.out.println("Average: " + analysis.getAverage());
-        System.out.println("Spread: " + analysis.getEmpiricalSpread());
+        AnalysisLogger logger = AnalysisLogger.getInstance();
         
-        System.out.println("Interval: " + analysis.getConfidenzInterval95());
+        Class clazz = Double.class;
+        int lists = 500000;
+        int elements = 10;
+        int intervalLeft = 0;
+        int intervalRight = 1;
+        
+        for(int i = 0; i < 10; i++)
+        {
+            BubbleSortAnalysis analysis = new BubbleSortAnalysis<>(clazz, lists, elements, new Interval(intervalLeft, intervalRight));
+            logger.addResult(analysis);
+        }
+        
     }
 }

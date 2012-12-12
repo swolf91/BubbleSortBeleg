@@ -1,0 +1,80 @@
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.502446
+Spread:				5.583210220075608
+ConfidenzInterval 95%:		[11.559353968651807, 33.44553803134819]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.50767
+Spread:				5.5898475528310545
+ConfidenzInterval 95%:		[11.551568796451134, 33.463771203548866]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.495102
+Spread:				5.595862278232486
+ConfidenzInterval 95%:		[11.527211934664326, 33.46299206533567]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.501332
+Spread:				5.596924233621334
+ConfidenzInterval 95%:		[11.531360502102187, 33.471303497897814]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.487814
+Spread:				5.586007689608726
+ConfidenzInterval 95%:		[11.539238928366897, 33.4363890716331]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.495666
+Spread:				5.590818162929238
+ConfidenzInterval 95%:		[11.537662400658695, 33.4536695993413]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.483028
+Spread:				5.583923917070202
+ConfidenzInterval 95%:		[11.538537122542404, 33.4275188774576]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.49629
+Spread:				5.592935615377455
+ConfidenzInterval 95%:		[11.534136193860187, 33.45844380613981]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.503294
+Spread:				5.576923825346973
+ConfidenzInterval 95%:		[11.572523302319933, 33.43406469768007]
+--------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	10
+Interval:			[0, 1]
+Type:				Double
+Avarage:			22.494296
+Spread:				5.599501957605546
+ConfidenzInterval 95%:		[11.51927216309313, 33.46931983690687]
+--------------------------

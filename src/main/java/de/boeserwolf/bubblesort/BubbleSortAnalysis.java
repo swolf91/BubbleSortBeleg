@@ -6,15 +6,17 @@ import de.boeserwolf.bubblesort.util.Interval;
 import de.boeserwolf.bubblesort.util.NumberUtil;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class BubbleSortAnalysis<C extends Comparable>
 {
-    int amountLists;
-    int amountElementsPerList;
+    private int amountLists;
+    private int amountElementsPerList;
     
-    Map<Integer, Integer> absoluteFrequency;
+    private Interval interval;
+    private Class elementClass;
+    
+    private Map<Integer, Integer> absoluteFrequency;
     
     BubbleSortAnalysis(Class<C> type, int amountLists, int amountElements, Interval interval)
     {
@@ -25,6 +27,8 @@ public class BubbleSortAnalysis<C extends Comparable>
         this.absoluteFrequency = new HashMap<>();
         this.amountLists = amountLists;
         this.amountElementsPerList = amountElements;
+        this.interval = interval;
+        this.elementClass = type;
         
         ComparableList<C> list = new ComparableList<>();
         
@@ -62,6 +66,16 @@ public class BubbleSortAnalysis<C extends Comparable>
     public double getRelativeFrequency(int key)
     {
         return this.absoluteFrequency.get(key) / (double)this.getNumberOfLists();
+    }
+    
+    public Class getElementClass()
+    {
+        return this.elementClass;
+    }
+    
+    public Interval getInterval()
+    {
+        return this.interval;
     }
     
     public double getAverage()
