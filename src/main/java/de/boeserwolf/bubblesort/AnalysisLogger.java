@@ -41,8 +41,10 @@ public class AnalysisLogger
                 "Number Of Elements Per List:\t" + analysis.getNumberOfElementsPerList(),
                 "Interval:\t\t\t" + analysis.getInterval(),
                 "Type:\t\t\t\t" + analysis.getElementClass().getSimpleName(),
+                "Expectation:\t\t\t" + analysis.getExpectation(),
                 "Avarage:\t\t\t" + analysis.getAverage(),
-                "Spread:\t\t\t\t" + analysis.getEmpiricalSpread(),
+                "Statistical Spread:\t\t" + analysis.getStatisticalSpread(),
+                "Empirical Spread:\t\t" + analysis.getEmpiricalSpread(),
                 "ConfidenzInterval 95%:\t\t" + analysis.getConfidenzInterval95()
         );
     }
