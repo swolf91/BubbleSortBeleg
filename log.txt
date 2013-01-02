@@ -418,3 +418,13 @@ Statistical Spread:		28187.500000000025
 Empirical Spread:		28224.392345340686
 ConfidenzInterval 95%:		[2145.9249393268, 2804.4895166732003]
 --------------------------
+Number Of Lists:		500000
+Number Of Elements Per List:	100
+Interval:			[0, 1]
+Type:				Double
+Expectation:			2475.0
+Avarage:			2475.217684
+Statistical Spread:		28187.500000000025
+Empirical Spread:		28142.982367640867
+ConfidenzInterval 95%:		[2146.4106264973834, 2804.024741502617]
+--------------------------

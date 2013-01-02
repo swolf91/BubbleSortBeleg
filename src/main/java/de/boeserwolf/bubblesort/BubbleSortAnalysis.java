@@ -108,16 +108,6 @@ public class BubbleSortAnalysis<C extends Comparable>
 
     public int getMaxReplacements()
     {
-//        int value = 0;
-//        
-//        for(int i = 1; i < this.getNumberOfElementsPerList(); i++)
-//        {
-//            value += this.getNumberOfElementsPerList() - i;
-//        }
-//        
-//        return value;
-//        Ergebis drüber weil element ganz rechts genau n-1 mal verschoben werden kann, das danach n-2 mal, etc. so kommt man auf summe von 1 bis n-1
-//        kommentar umschreiben laut Gaus folgendes:
         return ( int ) (this.getNumberOfElementsPerList() * (this.getNumberOfElementsPerList() - 1) * 0.5);
     }
 
