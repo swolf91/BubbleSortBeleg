@@ -116,9 +116,9 @@ public class BubbleSortAnalysis<C extends Comparable>
         double value = 0;
         for(int i = 1; i < this.getNumberOfElementsPerList(); i++)
         {
-            value += (this.getNumberOfElementsPerList() - i) / 12.0 * (this.getNumberOfElementsPerList() - i + 2);
+            value += (this.getNumberOfElementsPerList() - i) * (this.getNumberOfElementsPerList() - i + 2);
         }
-        return value;
+        return value / 12.0;
     }
 
     public Interval getConfidenzInterval95()
