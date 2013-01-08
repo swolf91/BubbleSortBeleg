@@ -1,4 +1,4 @@
-package de.boeserwolf.bubblesort;
+    package de.boeserwolf.bubblesort;
 
 import de.boeserwolf.bubblesort.util.ComparableList;
 import de.boeserwolf.bubblesort.util.Direction;
@@ -32,8 +32,6 @@ public class BubbleSortAnalysis<C extends Comparable>
 
         for( int i = 0; i < amountLists; i++ )
         {
-            list.clear();
-
             for( int j = 0; j < amountElements; j++ )
             {
                 if( type.equals( Integer.class ) )
@@ -48,6 +46,8 @@ public class BubbleSortAnalysis<C extends Comparable>
 
             list.sort( Direction.ASC );
             this.addAbsFrequency( list.getReplacements() );
+            
+            list.clear();
         }
     }
 

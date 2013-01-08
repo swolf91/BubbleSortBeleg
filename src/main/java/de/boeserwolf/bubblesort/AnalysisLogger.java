@@ -10,6 +10,10 @@ public class AnalysisLogger
     private static AnalysisLogger instance;
     private Logger logger;
     
+    /**
+     * erzeugt einen Datenlogger
+     * @throws IOException 
+     */
     private AnalysisLogger() throws IOException
     {
         this.logger = Logger.getLogger("bubbleSortAnalysis");
@@ -18,6 +22,10 @@ public class AnalysisLogger
         this.logger.addHandler(fileHandler);
     }
     
+    /**
+     * gibt eine Instanz der Klasse zurück
+     * @return 
+     */
     public static AnalysisLogger getInstance()
     {
         if(instance == null)
@@ -34,6 +42,10 @@ public class AnalysisLogger
         return instance;
     }
     
+    /**
+     * fügt einen Statistikeintrag in die Datei
+     * @param analysis 
+     */
     public void addResult(BubbleSortAnalysis analysis)
     {
         this.logInfo(
@@ -49,11 +61,19 @@ public class AnalysisLogger
         );
     }
     
+    /**
+     * loggt Nachrichten mithilfe des Datenloggers
+     * @param message 
+     */
     public void logInfo(String message)
     {
         this.logger.log(Level.INFO, message);
     }
     
+    /**
+     * loggt Nachrichten
+     * @param params 
+     */
     public void logInfo(String ... params)
     {
         if(params != null)
