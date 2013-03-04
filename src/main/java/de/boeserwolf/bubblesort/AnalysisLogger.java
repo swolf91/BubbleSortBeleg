@@ -55,8 +55,8 @@ public class AnalysisLogger
                 "Type:\t\t\t\t" + analysis.getElementClass().getSimpleName(),
                 "Expectation:\t\t\t" + analysis.getExpectation(),
                 "Avarage:\t\t\t" + analysis.getAverage(),
-                "Statistical Spread:\t\t" + analysis.getStatisticalSpread(),
-                "Empirical Spread:\t\t" + analysis.getEmpiricalSpread(),
+                "Statistical Variance:\t\t" + analysis.getStatisticalVariance(),
+                "Empirical Variance:\t\t" + analysis.getEmpiricalVariance(),
                 "ConfidenzInterval 95%:\t\t" + analysis.getConfidenzInterval95()
         );
     }

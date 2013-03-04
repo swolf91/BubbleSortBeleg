@@ -11,7 +11,7 @@ public class Main
         Class clazz = Double.class;
         int numberOfAnalysises = 5;
         int lists = 1000000;
-        int elements = 100;
+        int elements = 10;
         int intervalLeft = 0;
         int intervalRight = 1;
         

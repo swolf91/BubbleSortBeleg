@@ -88,17 +88,17 @@ public class BubbleSortAnalysis<C extends Comparable>
         return avg / ( double ) this.getNumberOfLists();
     }
 
-    public double getEmpiricalSpread()
+    public double getEmpiricalVariance()
     {
-        double spread = 0;
+        double variance = 0;
         double avg = this.getAverage();
 
         for( Integer value : this.getReplacementKeys() )
         {
-            spread += this.getAbsoluteFrequency( value ) * Math.pow( value - avg, 2 );
+            variance += this.getAbsoluteFrequency( value ) * Math.pow( value - avg, 2 );
         }
-        spread /= ( double ) (this.getNumberOfLists() - 1);
-        return spread;
+        variance /= ( double ) (this.getNumberOfLists() - 1);
+        return variance;
     }
 
     public double getExpectation()
@@ -111,7 +111,7 @@ public class BubbleSortAnalysis<C extends Comparable>
         return ( int ) (this.getNumberOfElementsPerList() * (this.getNumberOfElementsPerList() - 1) * 0.5);
     }
 
-    public double getStatisticalSpread()
+    public double getStatisticalVariance()
     {
         double value = 0;
         for(int i = 1; i < this.getNumberOfElementsPerList(); i++)
@@ -124,9 +124,9 @@ public class BubbleSortAnalysis<C extends Comparable>
     public Interval getConfidenzInterval95()
     {
         double avg = this.getAverage();
-        double spread = Math.sqrt( this.getEmpiricalSpread() );
+        double variance = Math.sqrt( this.getEmpiricalVariance() );
 
-        return new Interval( avg - 1.96 * spread, avg + 1.96 * spread );
+        return new Interval( avg - 1.96 * variance, avg + 1.96 * variance );
     }
 
     public int getNumberOfLists()
